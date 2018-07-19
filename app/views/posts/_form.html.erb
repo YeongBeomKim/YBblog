@@ -1,0 +1,11 @@
+<%= simple_form_for(@post) do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.input :title, input_html: { class: 'form-control' }, label: '제목', placeholder: '제목' %>
+    <%= f.input :content, input_html: { class: 'from-control' }, label: '내용', placeholder: '내용' %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :photo %>
+  </div>
+  <%= f.button :submit, class: 'btn btn-default'%>
+<% end %>

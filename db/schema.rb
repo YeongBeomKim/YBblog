@@ -46,10 +46,12 @@ ActiveRecord::Schema.define(version: 20161113053255) do
     t.string   "title"
     t.text     "content"
     t.string   "photo"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "category_id"
     t.index ["category_id"], name: "index_posts_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
   create_table "posts_tags", id: false, force: :cascade do |t|
@@ -90,4 +92,5 @@ ActiveRecord::Schema.define(version: 20161113053255) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "categories"
+  add_foreign_key "posts", "users"
 end

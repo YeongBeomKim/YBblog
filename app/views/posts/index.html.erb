@@ -1,0 +1,12 @@
+<div>포스트 전체보기</div>
+<%= @posts.each do |post| %>
+    <ul>
+        <li><%=post.title%></li>
+        <div>
+            <%= link_to  "수정", edit_post_path(post) %>
+            <%= link_to "삭제", post_path(post), method: :delete %>
+        </div>
+    </ul>
+<% end %>
+
+<%= link_to "새로만들기", new_post_path %>

@@ -23,10 +23,12 @@ class PostsController < ApplicationController
   def update
     @post.update(post_params) ? (redirect_to @post) : (render 'edit')
   end
-
+  def destroy
+    @post.destroy ? (redirect_to posts_path) : (redirect_to @post)
+  end
   private
   def post_params
-    params.require(:post).permit(:content,:user_id,:community_id)
+    params.require(:post).permit(:user_id,:title,:content,:photo)
   end
   def set_post
     @post = Post.find(params[:id])

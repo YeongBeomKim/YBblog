@@ -1,0 +1,11 @@
+<div>
+    <ul>
+        <li>작성자 이메일 : <%= @post.user.email%></li>
+        <li>제목 : <%= @post.title%></li>
+        <li>내용 : <%= @post.content%></li>
+        <%= image_tag(@post.photo) %>
+    </ul>
+</div>
+
+<div><%= link_to "게시물 수정", edit_post_path(@post)%></div>
+<div><%= link_to "게시물 삭제", post_path(@post), method: :delete %></div>
