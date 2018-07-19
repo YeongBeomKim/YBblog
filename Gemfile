@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'devise'
 gem 'omniauth-facebook'
-
+gem 'carrierwave', '~> 1.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
 group :development, :test do
